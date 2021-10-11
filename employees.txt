@@ -1,0 +1,57 @@
+CREATE DATABASE employees_payments;
+
+CREATE TABLE IF NOT EXISTS profession (
+ id sereal primary key,
+ title varchar(255) UNIQUE NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS emloyee (
+ id sereal primary key,
+ name varchar(255) NOT NULL,
+ profession_id integer,
+ salary integer,
+ avatar varchar(255),
+ FOREIGN KEY (profession_id) REFERENCES profession(id)   
+);
+
+
+CREATE TABLE IF NOT EXISTS payment (
+ id sereal primary key,
+ date date,
+ emloyee_id integer,
+ prize integer,
+ FOREIGN KEY (emloyee_id) REFERENCES emloyee(id)
+);
+
+
+--Adding professions 
+INSERT INTO profession (title) 
+VALUES 
+('Электрик'),
+('Плотник'),
+('Садовод');
+
+
+--Adding emloyees
+INSERT INTO emloyee (name,profession_id,salary,avatar) 
+	VALUES 	
+	('Иванов Иван Иванович',1,80000,'/'),
+	('Степанов Степан Степанович',2,70000,'/'),
+	('Радионов Кевин Андреевич',3,110000,'/'),
+	('Джон Смит',1,52000,'/'),
+	('Сергей Михайлович Деревенский',2,500000,'/'),
+
+--Adding payments
+INSERT INTO payment (date,emloyee_id,prize) 
+VALUES 
+(09-2021,1,1000),
+(09-2021,2,1000),
+(09-2021,3,1000),
+(09-2021,4,1000),
+(09-2021,5,1000),
+(10-2021,1,11000),
+(10-2021,2,11000),
+(10-2021,3,11000),
+(10-2021,4,11000),
+(10-2021,5,11000),
+
