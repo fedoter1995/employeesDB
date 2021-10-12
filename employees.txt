@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS payment (
 
 
 --Adding professions 
-INSERT INTO profession (title) 
+INSERT profession (title) 
 VALUES 
 ('Электрик'),
 ('Плотник'),
@@ -33,7 +33,7 @@ VALUES
 
 
 --Adding emloyees
-INSERT INTO emloyee (name,profession_id,salary,avatar) 
+INSERT emloyee (name,profession_id,salary,avatar) 
 	VALUES 	
 	('Иванов Иван Иванович',1,80000,'/'),
 	('Степанов Степан Степанович',2,70000,'/'),
@@ -42,7 +42,7 @@ INSERT INTO emloyee (name,profession_id,salary,avatar)
 	('Сергей Михайлович Деревенский',2,500000,'/'),
 
 --Adding payments
-INSERT INTO payment (date,emloyee_id,prize) 
+INSERT payment (date,emloyee_id,prize) 
 VALUES 
 (09-2021,1,1000),
 (09-2021,2,1000),
@@ -53,5 +53,5 @@ VALUES
 (10-2021,2,11000),
 (10-2021,3,11000),
 (10-2021,4,11000),
-(10-2021,5,11000),
+(10-2021,5,11000);
 
